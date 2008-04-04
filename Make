@@ -1,0 +1,19 @@
+-R . Lambek
+ArrowDed.v
+ArrowGentzen.v
+CutSequent.v
+ExampleNatDed2.v
+ExampleNatDed3.v
+ExampleNatDed.v
+ExamplePol.v
+Filters.v
+Form.v
+GentzenDed.v
+LSeqProp.v
+NaturalDeduction.v
+Polarity.v
+ReplaceProp.v
+Semantics.v
+Sequent.v
+Tactics.v
+Terms.v

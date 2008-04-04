@@ -1,0 +1,61 @@
+================================
+         Readme
+================================
+
+===========================================
+Name : Lambek-Calculus
+Title: A Coq toolkit for Lambek Calculus
+Authors: Houda ANOUN & Pierre CASTERAN
+Institution: LaBRI , Bordeaux 
+Date : March - July 2003
+===========================================
+
+Description: 
+------------
+
+This library contains some definitions concerning Lambek calculus ...
+Three formalisations of this calculus are proposed, and also some certified
+ functions which translate derivations from one formalism to another...
+Several derived properties are proved and also some meta-theorems...
+Users can define their own lexicons and use the defined tactics to prove the
+derivation of sentences in a particular system (L, NL, LP, NLP ...)
+
+Keywords: Computational linguistic, categorial grammar, Lambek Calculus...
+--------
+
+
+Interested users can find more details about this library in the INRIA research report 
+titled 'Logical Toolkit for Lambek Calculus'  
+
+
+Files contents :
+===============
+Form.v : axiomatic presentation of Lambek Calculus
+
+Semantics.v & Filters.v : proof that axiomatic presentation is sound and complete 
+(using Kripke Models)
+
+Sequent.v : sequent calculus 
+
+ReplaceProp.v : some properties of the predicate 'replace'
+
+NaturalDeduction.v: natural deduction
+
+Polarity.v: Polarity meta-theorem
+
+CutSequent.v:sub-formula property
+
+LSeqProp.v : some properties concerning L system
+
+Tactics.v : some tactics defined in Ltac language
+
+Example*.v : some examples
+
+ArrowDed.v: functions that translate derivations from the axiomatic presentation
+ to natural deduction formalism and conversely
+
+ArrowGentzen.v:functions that translate derivations from gentzen calculus
+ to axiomatic presentation and conversely
+
+GentzenDed.v:functions that translate derivations from gentzen calculus 
+to natural deduction formalism and conversely
