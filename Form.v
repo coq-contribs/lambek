@@ -27,7 +27,7 @@
 (* Formalisation of the axiomatic presentation 
   of Lambek calculus . cf.Moortgat *)
 
-
+Global Set Asymmetric Patterns.
 Set Implicit Arguments.
 Unset Strict Implicit.
 
