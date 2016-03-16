@@ -1,4 +1,5 @@
 -R . Lambek
+
 ArrowDed.v
 ArrowGentzen.v
 CutSequent.v
