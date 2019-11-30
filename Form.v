@@ -492,9 +492,9 @@ End weaken.
 End CTL_def.
 
 
-Implicit Arguments Dot [Atoms].
-Implicit Arguments Slash [Atoms].
-Implicit Arguments Backslash [Atoms].
+Arguments Dot [Atoms].
+Arguments Slash [Atoms].
+Arguments Backslash [Atoms].
 
 
 Hint Resolve one comp beta gamma arrow_plus: ctl.

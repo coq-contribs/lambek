@@ -146,14 +146,12 @@ Qed.
 Lemma replace_inv2 :
  forall (Gamma1 Gamma2 Gamma' Delta : Term Atoms) (X : Form Atoms),
  replace (Comma Gamma1 Gamma2) Gamma' (OneForm X) Delta ->
- sigS
-   (fun Gamma'1 : Term Atoms =>
+ { Gamma'1 : Term Atoms & 
     {x_ : replace Gamma1 Gamma'1 (OneForm X) Delta |
-    Gamma' = Comma Gamma'1 Gamma2}) +
- sigS
-   (fun Gamma'2 : Term Atoms =>
+    Gamma' = Comma Gamma'1 Gamma2} } +
+ { Gamma'2 : Term Atoms &
     {x_ : replace Gamma2 Gamma'2 (OneForm X) Delta |
-    Gamma' = Comma Gamma1 Gamma'2}).
+    Gamma' = Comma Gamma1 Gamma'2} }.
 inversion_clear 1.
 left; exists Gamma3.
 exists H0; auto.
@@ -166,12 +164,8 @@ Definition doubleReplace :
   replace Gamma Gamma' T1 T2 ->
   forall Gamma2 : Term Atoms,
   replace Gamma' Gamma2 (OneForm A) T3 ->
-  sigS
-    (fun T : Term Atoms =>
-     (replace Gamma T (OneForm A) T3 * replace T Gamma2 T1 T2)%type) +
-  sigS
-    (fun T : Term Atoms =>
-     (replace T2 T (OneForm A) T3 * replace Gamma Gamma2 T1 T)%type).
+  { T : Term Atoms & (replace Gamma T (OneForm A) T3 * replace T Gamma2 T1 T2)%type } +
+  { T : Term Atoms & (replace T2 T (OneForm A) T3 * replace Gamma Gamma2 T1 T)%type }.
 
 
  simple induction 1.
@@ -232,8 +226,7 @@ Definition replaceSameP :
   forall T1 T2 T3 T4 : Term Atoms,
   replace T1 T2 T3 T4 ->
   forall T : Term Atoms,
-  sigS
-    (fun T' : Term Atoms => (replace T1 T' T3 T * replace T' T2 T T4)%type). 
+  { T' : Term Atoms & (replace T1 T' T3 T * replace T' T2 T T4)%type }. 
  simple induction 1.
  intros.
  split with T.
