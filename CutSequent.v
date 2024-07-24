@@ -25,7 +25,7 @@
 
 (* proof of the sub-formula property in the sequent calculus *)
 Require Import Arith.
-Require Import Max.
+Require Import Lia.
 Require Export Sequent.
 Set Implicit Arguments.
 Unset Strict Implicit.
@@ -37,11 +37,8 @@ Proof.
  intros m n H.
  cut (m <= 0).
  intro.
- cut (0 = m); auto. 
- apply le_n_O_eq.
- assumption.
- rewrite <- H.
- apply le_max_l.
+ cut (0 = m); auto.
+ all: lia.
 Qed.
 
 Lemma maxNatR : forall n m : nat, max n m = 0 -> m = 0.
@@ -50,10 +47,7 @@ Proof.
  cut (0 = m'); auto.
  cut (m' <= 0).
  intro.
- apply le_n_O_eq.
- assumption.
- rewrite <- H.
- auto with arith.
+ all: lia.
 Qed.
 (* end of arithmetic part *)
 
@@ -291,7 +285,7 @@ Lemma notCutFree :
  generalize H1.
  cut (~ 1 <= 0).
  auto.
- apply le_Sn_O.
+ lia.
  cut (max (degreeFormula A) (degreeProof p1) = 0).
  intro; eapply maxNatL; eauto.
  eapply maxNatL; eauto.

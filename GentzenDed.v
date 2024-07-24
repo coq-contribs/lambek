@@ -91,9 +91,8 @@ Definition condCutExt (X : gentzen_extension) :=
   forall (Atoms:Set)(T T1 T2 T3 : Term Atoms) (A : Form Atoms),
   X _ T1 T2 ->
   replace T2 T (OneForm A) T3 ->
-  sigS
+  sigT
     (fun T' : Term Atoms => (X _ T' T * replace T1 T' (OneForm A) T3)%type).
-       
 
 
 Definition conditionOKNLP : condCutExt NLP_Sequent.
