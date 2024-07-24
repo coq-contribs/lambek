@@ -492,9 +492,11 @@ End weaken.
 End CTL_def.
 
 
+(* NOTE: no more supported in newer Coq versions
 Implicit Arguments Dot [Atoms].
 Implicit Arguments Slash [Atoms].
 Implicit Arguments Backslash [Atoms].
+ *)
 
 
 Hint Resolve one comp beta gamma arrow_plus: ctl.
